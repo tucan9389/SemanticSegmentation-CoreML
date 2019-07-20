@@ -16,6 +16,9 @@
 		71BBE05822E33BEF00E74F11 /* DeepLabV3FP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 71BBE05722E33BEF00E74F11 /* DeepLabV3FP16.mlmodel */; };
 		71BBE05A22E33BF300E74F11 /* DeepLabV3Int8LUT.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 71BBE05922E33BF300E74F11 /* DeepLabV3Int8LUT.mlmodel */; };
 		71BBE05C22E33C6C00E74F11 /* StillImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BBE05B22E33C6C00E74F11 /* StillImageViewController.swift */; };
+		71BBE05F22E33F8D00E74F11 /* DrawingSegmentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BBE05E22E33F8D00E74F11 /* DrawingSegmentationView.swift */; };
+		71BBE06222E3400E00E74F11 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BBE06022E3400E00E74F11 /* VideoCapture.swift */; };
+		71BBE06322E3400E00E74F11 /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BBE06122E3400E00E74F11 /* Measure.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		71BBE05722E33BEF00E74F11 /* DeepLabV3FP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepLabV3FP16.mlmodel; sourceTree = "<group>"; };
 		71BBE05922E33BF300E74F11 /* DeepLabV3Int8LUT.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepLabV3Int8LUT.mlmodel; sourceTree = "<group>"; };
 		71BBE05B22E33C6C00E74F11 /* StillImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StillImageViewController.swift; sourceTree = "<group>"; };
+		71BBE05E22E33F8D00E74F11 /* DrawingSegmentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingSegmentationView.swift; sourceTree = "<group>"; };
+		71BBE06022E3400E00E74F11 /* VideoCapture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
+		71BBE06122E3400E00E74F11 /* Measure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +68,13 @@
 		71BBE04222E33B2500E74F11 /* ObjectSegmentation-CoreML */ = {
 			isa = PBXGroup;
 			children = (
+				71BBE04722E33B2500E74F11 /* Main.storyboard */,
 				71BBE04322E33B2500E74F11 /* AppDelegate.swift */,
 				71BBE04522E33B2500E74F11 /* LiveImageViewController.swift */,
 				71BBE05B22E33C6C00E74F11 /* StillImageViewController.swift */,
-				71BBE04722E33B2500E74F11 /* Main.storyboard */,
+				71BBE05E22E33F8D00E74F11 /* DrawingSegmentationView.swift */,
+				71BBE06122E3400E00E74F11 /* Measure.swift */,
+				71BBE06022E3400E00E74F11 /* VideoCapture.swift */,
 				71BBE05D22E33CEA00E74F11 /* mlmodel */,
 				71BBE04A22E33B2600E74F11 /* Assets.xcassets */,
 				71BBE04C22E33B2600E74F11 /* LaunchScreen.storyboard */,
@@ -155,11 +164,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71BBE06222E3400E00E74F11 /* VideoCapture.swift in Sources */,
 				71BBE05A22E33BF300E74F11 /* DeepLabV3Int8LUT.mlmodel in Sources */,
+				71BBE06322E3400E00E74F11 /* Measure.swift in Sources */,
 				71BBE05822E33BEF00E74F11 /* DeepLabV3FP16.mlmodel in Sources */,
 				71BBE05622E33BEB00E74F11 /* DeepLabV3.mlmodel in Sources */,
 				71BBE05C22E33C6C00E74F11 /* StillImageViewController.swift in Sources */,
 				71BBE04622E33B2500E74F11 /* LiveImageViewController.swift in Sources */,
+				71BBE05F22E33F8D00E74F11 /* DrawingSegmentationView.swift in Sources */,
 				71BBE04422E33B2500E74F11 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
