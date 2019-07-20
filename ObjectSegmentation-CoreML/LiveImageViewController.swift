@@ -30,7 +30,11 @@ class LiveImageViewController: UIViewController {
     var request: VNCoreMLRequest?
     var visionModel: VNCoreMLModel?
     
+    var isInferencing = false
     let postprocessor = SegmentationPostProcessor()
+    
+    // MARK: - Performance Measurement Property
+    private let 👨‍🔧 = 📏()
     
     // MARK: - View Controller Life Cycle
     override func viewDidLoad() {
@@ -41,6 +45,9 @@ class LiveImageViewController: UIViewController {
         
         // setup camera
         setUpCamera()
+        
+        // setup delegate for performance measurement
+        👨‍🔧.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -104,7 +111,11 @@ extension LiveImageViewController: VideoCaptureDelegate {
     func videoCapture(_ capture: VideoCapture, didCaptureVideoFrame pixelBuffer: CVPixelBuffer?/*, timestamp: CMTime*/) {
         
         // the captured image from camera is contained on pixelBuffer
-        if let pixelBuffer = pixelBuffer {
+        if let pixelBuffer = pixelBuffer, !isInferencing {
+            isInferencing = true
+            
+            // start of measure
+            self.👨‍🔧.🎬👏()
             
             // predict!
             predict(with: pixelBuffer)
@@ -125,6 +136,7 @@ extension LiveImageViewController {
     
     // post-processing
     func visionRequestDidComplete(request: VNRequest, error: Error?) {
+        self.👨‍🔧.🏷(with: "endInference")
         
         if let observations = request.results as? [VNCoreMLFeatureValueObservation],
             let heatmap = observations.first?.featureValue.multiArrayValue {
@@ -133,9 +145,25 @@ extension LiveImageViewController {
             DispatchQueue.main.async { [weak self] in
                 // update result
                 self?.drawingView.segmentationmap = convertedHeatmap
+                
+                // end of measure
+                self?.👨‍🔧.🎬🤚()
+                self?.isInferencing = false
             }
         } else {
-            
+            // end of measure
+            self.👨‍🔧.🎬🤚()
+            isInferencing = false
         }
+    }
+}
+
+// MARK: - 📏(Performance Measurement) Delegate
+extension LiveImageViewController: 📏Delegate {
+    func updateMeasure(inferenceTime: Double, executionTime: Double, fps: Int) {
+        //print(executionTime, fps)
+        self.inferenceLabel.text = "inference: \(Int(inferenceTime*1000.0)) mm"
+        self.etimeLabel.text = "execution: \(Int(executionTime*1000.0)) mm"
+        self.fpsLabel.text = "fps: \(fps)"
     }
 }

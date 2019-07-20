@@ -45,16 +45,13 @@ class DrawingSegmentationView: UIView {
             for j in 0..<segmentationmap_h {
                 for i in 0..<segmentationmap_w {
                     let value = segmentationmap[i][j]
-                    
+
                     let rect: CGRect = CGRect(x: CGFloat(i) * w, y: CGFloat(j) * h, width: w, height: h)
-                    
+
                     let color: UIColor = segmentationColor(with: Int32(value))
-                    
-                    let bpath: UIBezierPath = UIBezierPath(rect: rect)
-                    
-                    color.set()
-                    //bpath.stroke()
-                    bpath.fill()
+
+                    color.setFill()
+                    UIRectFill(rect)
                 }
             }
         }
