@@ -25,8 +25,6 @@ class StillImageViewController: UIViewController {
     var request: VNCoreMLRequest?
     var visionModel: VNCoreMLModel?
     
-    let postprocessor = SegmentationPostProcessor()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -81,7 +79,7 @@ extension StillImageViewController {
         if let observations = request.results as? [VNCoreMLFeatureValueObservation],
             let segmentationmap = observations.first?.featureValue.multiArrayValue {
             
-            drawingView.segmentationmap = postprocessor.convertTo2DArray(from: segmentationmap)
+            drawingView.segmentationmap = SegmentationResultMLMultiArray(mlMultiArray: segmentationmap)
         }
     }
 }

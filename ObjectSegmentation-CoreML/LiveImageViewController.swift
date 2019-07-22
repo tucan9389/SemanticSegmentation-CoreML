@@ -31,7 +31,6 @@ class LiveImageViewController: UIViewController {
     var visionModel: VNCoreMLModel?
     
     var isInferencing = false
-    let postprocessor = SegmentationPostProcessor()
     
     // MARK: - Performance Measurement Property
     private let 👨‍🔧 = 📏()
@@ -139,12 +138,12 @@ extension LiveImageViewController {
         self.👨‍🔧.🏷(with: "endInference")
         
         if let observations = request.results as? [VNCoreMLFeatureValueObservation],
-            let heatmap = observations.first?.featureValue.multiArrayValue {
+            let segmentationmap = observations.first?.featureValue.multiArrayValue {
             
-            let convertedHeatmap = postprocessor.convertTo2DArray(from: heatmap)
+            let segmentationResultMLMultiArray = SegmentationResultMLMultiArray(mlMultiArray: segmentationmap)
             DispatchQueue.main.async { [weak self] in
                 // update result
-                self?.drawingView.segmentationmap = convertedHeatmap
+                self?.drawingView.segmentationmap = segmentationResultMLMultiArray
                 
                 // end of measure
                 self?.👨‍🔧.🎬🤚()

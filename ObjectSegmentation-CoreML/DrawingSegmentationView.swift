@@ -23,7 +23,7 @@ class DrawingSegmentationView: UIView {
         }
     }
     
-    var segmentationmap: Array<Array<Int32>>? = nil {
+    var segmentationmap: SegmentationResultMLMultiArray? = nil {
         didSet {
             self.setNeedsDisplay()
         }
@@ -38,18 +38,18 @@ class DrawingSegmentationView: UIView {
             guard let segmentationmap = self.segmentationmap else { return }
             
             let size = self.bounds.size
-            let segmentationmap_w = segmentationmap.count
-            let segmentationmap_h = segmentationmap.first?.count ?? 0
-            let w = size.width / CGFloat(segmentationmap_w)
-            let h = size.height / CGFloat(segmentationmap_h)
+            let segmentationmapWidthSize = segmentationmap.segmentationmapWidthSize
+            let segmentationmapHeightSize = segmentationmap.segmentationmapHeightSize
+            let w = size.width / CGFloat(segmentationmapWidthSize)
+            let h = size.height / CGFloat(segmentationmapHeightSize)
             
-            for j in 0..<segmentationmap_h {
-                for i in 0..<segmentationmap_w {
-                    let value = segmentationmap[i][j]
+            for j in 0..<segmentationmapHeightSize {
+                for i in 0..<segmentationmapWidthSize {
+                    let value = segmentationmap[i, j].int32Value
 
                     let rect: CGRect = CGRect(x: CGFloat(i) * w, y: CGFloat(j) * h, width: w, height: h)
 
-                    let color: UIColor = segmentationColor(with: Int32(value))
+                    let color: UIColor = segmentationColor(with: value)
 
                     color.setFill()
                     UIRectFill(rect)

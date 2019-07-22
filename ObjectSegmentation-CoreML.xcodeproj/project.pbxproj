@@ -19,7 +19,7 @@
 		71BBE05F22E33F8D00E74F11 /* DrawingSegmentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BBE05E22E33F8D00E74F11 /* DrawingSegmentationView.swift */; };
 		71BBE06222E3400E00E74F11 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BBE06022E3400E00E74F11 /* VideoCapture.swift */; };
 		71BBE06322E3400E00E74F11 /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BBE06122E3400E00E74F11 /* Measure.swift */; };
-		71BBE06722E3446300E74F11 /* SegmentationPostProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BBE06622E3446300E74F11 /* SegmentationPostProcessor.swift */; };
+		71BBE06722E3446300E74F11 /* SegmentationResultMLMultiArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BBE06622E3446300E74F11 /* SegmentationResultMLMultiArray.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +37,7 @@
 		71BBE05E22E33F8D00E74F11 /* DrawingSegmentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingSegmentationView.swift; sourceTree = "<group>"; };
 		71BBE06022E3400E00E74F11 /* VideoCapture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
 		71BBE06122E3400E00E74F11 /* Measure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
-		71BBE06622E3446300E74F11 /* SegmentationPostProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentationPostProcessor.swift; sourceTree = "<group>"; };
+		71BBE06622E3446300E74F11 /* SegmentationResultMLMultiArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentationResultMLMultiArray.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +75,7 @@
 				71BBE04522E33B2500E74F11 /* LiveImageViewController.swift */,
 				71BBE05B22E33C6C00E74F11 /* StillImageViewController.swift */,
 				71BBE05E22E33F8D00E74F11 /* DrawingSegmentationView.swift */,
-				71BBE06622E3446300E74F11 /* SegmentationPostProcessor.swift */,
+				71BBE06622E3446300E74F11 /* SegmentationResultMLMultiArray.swift */,
 				71BBE06122E3400E00E74F11 /* Measure.swift */,
 				71BBE06022E3400E00E74F11 /* VideoCapture.swift */,
 				71BBE05D22E33CEA00E74F11 /* mlmodel */,
@@ -171,7 +171,7 @@
 				71BBE05A22E33BF300E74F11 /* DeepLabV3Int8LUT.mlmodel in Sources */,
 				71BBE06322E3400E00E74F11 /* Measure.swift in Sources */,
 				71BBE05822E33BEF00E74F11 /* DeepLabV3FP16.mlmodel in Sources */,
-				71BBE06722E3446300E74F11 /* SegmentationPostProcessor.swift in Sources */,
+				71BBE06722E3446300E74F11 /* SegmentationResultMLMultiArray.swift in Sources */,
 				71BBE05622E33BEB00E74F11 /* DeepLabV3.mlmodel in Sources */,
 				71BBE05C22E33C6C00E74F11 /* StillImageViewController.swift in Sources */,
 				71BBE04622E33B2500E74F11 /* LiveImageViewController.swift in Sources */,
