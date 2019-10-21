@@ -45,7 +45,7 @@ class DrawingSegmentationView: UIView {
             
             for j in 0..<segmentationmapHeightSize {
                 for i in 0..<segmentationmapWidthSize {
-                    let value = segmentationmap[i, j].int32Value
+                    let value = segmentationmap[j, i].int32Value
 
                     let rect: CGRect = CGRect(x: CGFloat(i) * w, y: CGFloat(j) * h, width: w, height: h)
 
