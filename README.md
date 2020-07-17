@@ -1,4 +1,4 @@
-# ObjectSegmentation-CoreML
+# SemanticSegmentation-CoreML
 
 ![platform-ios](https://img.shields.io/badge/platform-ios-lightgrey.svg)
 ![swift-version](https://img.shields.io/badge/swift-5.0-red.svg)

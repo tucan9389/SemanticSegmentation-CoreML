@@ -13,7 +13,7 @@
         <!--Live Image-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LiveImageViewController" customModule="ObjectSegmentation_CoreML" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LiveImageViewController" customModule="SemanticSegmentation_CoreML" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,7 +65,7 @@
                                     <constraint firstAttribute="width" secondItem="JAF-1N-GU4" secondAttribute="height" multiplier="3:4" priority="750" id="1PJ-If-ZK3"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YZz-xg-qgT" customClass="DrawingSegmentationView" customModule="ObjectSegmentation_CoreML" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YZz-xg-qgT" customClass="DrawingSegmentationView" customModule="SemanticSegmentation_CoreML" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="69" width="414" height="552"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -104,7 +104,7 @@
         <!--Still Image View Controller-->
         <scene sceneID="IS1-oH-MuW">
             <objects>
-                <viewController id="X7F-xP-m0H" customClass="StillImageViewController" customModule="ObjectSegmentation_CoreML" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="X7F-xP-m0H" customClass="StillImageViewController" customModule="SemanticSegmentation_CoreML" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rrC-89-LGp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -116,7 +116,7 @@
                                     <constraint firstAttribute="width" secondItem="R9C-5j-ZDa" secondAttribute="height" multiplier="1:1" priority="750" id="hLb-44-q2j"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gcq-ZI-Sh1" customClass="DrawingSegmentationView" customModule="ObjectSegmentation_CoreML" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gcq-ZI-Sh1" customClass="DrawingSegmentationView" customModule="SemanticSegmentation_CoreML" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="241" width="414" height="414"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>

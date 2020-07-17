@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "71BBE03F22E33B2500E74F11"
-               BuildableName = "ObjectSegmentation-CoreML.app"
-               BlueprintName = "ObjectSegmentation-CoreML"
-               ReferencedContainer = "container:ObjectSegmentation-CoreML.xcodeproj">
+               BuildableName = "SemanticSegmentation-CoreML.app"
+               BlueprintName = "SemanticSegmentation-CoreML"
+               ReferencedContainer = "container:SemanticSegmentation-CoreML.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,17 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "71BBE03F22E33B2500E74F11"
-            BuildableName = "ObjectSegmentation-CoreML.app"
-            BlueprintName = "ObjectSegmentation-CoreML"
-            ReferencedContainer = "container:ObjectSegmentation-CoreML.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -56,13 +45,11 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "71BBE03F22E33B2500E74F11"
-            BuildableName = "ObjectSegmentation-CoreML.app"
-            BlueprintName = "ObjectSegmentation-CoreML"
-            ReferencedContainer = "container:ObjectSegmentation-CoreML.xcodeproj">
+            BuildableName = "SemanticSegmentation-CoreML.app"
+            BlueprintName = "SemanticSegmentation-CoreML"
+            ReferencedContainer = "container:SemanticSegmentation-CoreML.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -75,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "71BBE03F22E33B2500E74F11"
-            BuildableName = "ObjectSegmentation-CoreML.app"
-            BlueprintName = "ObjectSegmentation-CoreML"
-            ReferencedContainer = "container:ObjectSegmentation-CoreML.xcodeproj">
+            BuildableName = "SemanticSegmentation-CoreML.app"
+            BlueprintName = "SemanticSegmentation-CoreML"
+            ReferencedContainer = "container:SemanticSegmentation-CoreML.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

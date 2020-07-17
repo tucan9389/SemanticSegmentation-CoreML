@@ -23,7 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		71BBE04022E33B2500E74F11 /* ObjectSegmentation-CoreML.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ObjectSegmentation-CoreML.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		71BBE04022E33B2500E74F11 /* SemanticSegmentation-CoreML.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SemanticSegmentation-CoreML.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BBE04322E33B2500E74F11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71BBE04522E33B2500E74F11 /* LiveImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveImageViewController.swift; sourceTree = "<group>"; };
 		71BBE04822E33B2500E74F11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 		71BBE03722E33B2500E74F11 = {
 			isa = PBXGroup;
 			children = (
-				71BBE04222E33B2500E74F11 /* ObjectSegmentation-CoreML */,
+				71BBE04222E33B2500E74F11 /* SemanticSegmentation-CoreML */,
 				71BBE04122E33B2500E74F11 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,12 +62,12 @@
 		71BBE04122E33B2500E74F11 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				71BBE04022E33B2500E74F11 /* ObjectSegmentation-CoreML.app */,
+				71BBE04022E33B2500E74F11 /* SemanticSegmentation-CoreML.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		71BBE04222E33B2500E74F11 /* ObjectSegmentation-CoreML */ = {
+		71BBE04222E33B2500E74F11 /* SemanticSegmentation-CoreML */ = {
 			isa = PBXGroup;
 			children = (
 				71BBE04722E33B2500E74F11 /* Main.storyboard */,
@@ -83,7 +83,7 @@
 				71BBE04C22E33B2600E74F11 /* LaunchScreen.storyboard */,
 				71BBE04F22E33B2600E74F11 /* Info.plist */,
 			);
-			path = "ObjectSegmentation-CoreML";
+			path = "SemanticSegmentation-CoreML";
 			sourceTree = "<group>";
 		};
 		71BBE05D22E33CEA00E74F11 /* mlmodel */ = {
@@ -99,9 +99,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		71BBE03F22E33B2500E74F11 /* ObjectSegmentation-CoreML */ = {
+		71BBE03F22E33B2500E74F11 /* SemanticSegmentation-CoreML */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 71BBE05222E33B2600E74F11 /* Build configuration list for PBXNativeTarget "ObjectSegmentation-CoreML" */;
+			buildConfigurationList = 71BBE05222E33B2600E74F11 /* Build configuration list for PBXNativeTarget "SemanticSegmentation-CoreML" */;
 			buildPhases = (
 				71BBE03C22E33B2500E74F11 /* Sources */,
 				71BBE03D22E33B2500E74F11 /* Frameworks */,
@@ -111,9 +111,9 @@
 			);
 			dependencies = (
 			);
-			name = "ObjectSegmentation-CoreML";
+			name = "SemanticSegmentation-CoreML";
 			productName = "ImageSegmentation-CoreML";
-			productReference = 71BBE04022E33B2500E74F11 /* ObjectSegmentation-CoreML.app */;
+			productReference = 71BBE04022E33B2500E74F11 /* SemanticSegmentation-CoreML.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -131,7 +131,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 71BBE03B22E33B2500E74F11 /* Build configuration list for PBXProject "ObjectSegmentation-CoreML" */;
+			buildConfigurationList = 71BBE03B22E33B2500E74F11 /* Build configuration list for PBXProject "SemanticSegmentation-CoreML" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -144,7 +144,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				71BBE03F22E33B2500E74F11 /* ObjectSegmentation-CoreML */,
+				71BBE03F22E33B2500E74F11 /* SemanticSegmentation-CoreML */,
 			);
 		};
 /* End PBXProject section */
@@ -324,13 +324,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5WXJ4Z4H69;
-				INFOPLIST_FILE = "ObjectSegmentation-CoreML/Info.plist";
+				INFOPLIST_FILE = "SemanticSegmentation-CoreML/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tucan9389.ObjectSegmentation-CoreML";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tucan9389.SemanticSegmentation-CoreML";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -343,13 +343,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5WXJ4Z4H69;
-				INFOPLIST_FILE = "ObjectSegmentation-CoreML/Info.plist";
+				INFOPLIST_FILE = "SemanticSegmentation-CoreML/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tucan9389.ObjectSegmentation-CoreML";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tucan9389.SemanticSegmentation-CoreML";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -359,7 +359,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		71BBE03B22E33B2500E74F11 /* Build configuration list for PBXProject "ObjectSegmentation-CoreML" */ = {
+		71BBE03B22E33B2500E74F11 /* Build configuration list for PBXProject "SemanticSegmentation-CoreML" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				71BBE05022E33B2600E74F11 /* Debug */,
@@ -368,7 +368,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		71BBE05222E33B2600E74F11 /* Build configuration list for PBXNativeTarget "ObjectSegmentation-CoreML" */ = {
+		71BBE05222E33B2600E74F11 /* Build configuration list for PBXNativeTarget "SemanticSegmentation-CoreML" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				71BBE05322E33B2600E74F11 /* Debug */,

@@ -24,7 +24,23 @@ class LiveImageViewController: UIViewController {
     
     // MARK - Core ML model
     // DeepLabV3(iOS12+), DeepLabV3FP16(iOS12+), DeepLabV3Int8LUT(iOS12+)
-    let segmentationModel = DeepLabV3()
+    let segmentationModel = DeepLabV3Int8LUT()
+
+    
+//    11 Pro
+//    DeepLabV3        : 37 465 1
+//    DeepLabV3FP16    : 40 511 1
+//    DeepLabV3Int8LUT : 40 520 1
+//
+//    XS
+//    DeepLabV3        : 135 409 2
+//    DeepLabV3FP16    : 136 403 2
+//    DeepLabV3Int8LUT : 135 412 2
+//
+//    X
+//    DeepLabV3        : 177 531 1
+//    DeepLabV3FP16    : 177 530 1
+//    DeepLabV3Int8LUT : 177 517 1
     
     // MARK: - Vision Properties
     var request: VNCoreMLRequest?
@@ -34,6 +50,10 @@ class LiveImageViewController: UIViewController {
     
     // MARK: - Performance Measurement Property
     private let 👨‍🔧 = 📏()
+    
+    let maf1 = MovingAverageFilter()
+    let maf2 = MovingAverageFilter()
+    let maf3 = MovingAverageFilter()
     
     // MARK: - View Controller Life Cycle
     override func viewDidLoad() {
@@ -160,9 +180,30 @@ extension LiveImageViewController {
 // MARK: - 📏(Performance Measurement) Delegate
 extension LiveImageViewController: 📏Delegate {
     func updateMeasure(inferenceTime: Double, executionTime: Double, fps: Int) {
-        //print(executionTime, fps)
-        self.inferenceLabel.text = "inference: \(Int(inferenceTime*1000.0)) mm"
-        self.etimeLabel.text = "execution: \(Int(executionTime*1000.0)) mm"
-        self.fpsLabel.text = "fps: \(fps)"
+        self.maf1.append(element: Int(inferenceTime*1000.0))
+        self.maf2.append(element: Int(executionTime*1000.0))
+        self.maf3.append(element: fps)
+        
+        self.inferenceLabel.text = "inference: \(self.maf1.averageValue) ms"
+        self.etimeLabel.text = "execution: \(self.maf2.averageValue) ms"
+        self.fpsLabel.text = "fps: \(self.maf3.averageValue)"
+    }
+}
+
+class MovingAverageFilter {
+    private var arr: [Int] = []
+    private let maxCount = 10
+    
+    public func append(element: Int) {
+        arr.append(element)
+        if arr.count > maxCount {
+            arr.removeFirst()
+        }
+    }
+    
+    public var averageValue: Int {
+        guard !arr.isEmpty else { return 0 }
+        let sum = arr.reduce(0) { $0 + $1 }
+        return Int(Double(sum) / Double(arr.count))
     }
 }
