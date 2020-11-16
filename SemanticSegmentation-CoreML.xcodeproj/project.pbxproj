@@ -20,6 +20,15 @@
 		71BBE06222E3400E00E74F11 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BBE06022E3400E00E74F11 /* VideoCapture.swift */; };
 		71BBE06322E3400E00E74F11 /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BBE06122E3400E00E74F11 /* Measure.swift */; };
 		71BBE06722E3446300E74F11 /* SegmentationResultMLMultiArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BBE06622E3446300E74F11 /* SegmentationResultMLMultiArray.swift */; };
+		C4BB0D92256195AE00354C08 /* MetalRenderingDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB0D91256195AE00354C08 /* MetalRenderingDevice.swift */; };
+		C4BB0D96256195F800354C08 /* Maths.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB0D95256195F800354C08 /* Maths.swift */; };
+		C4BB0D99256196A300354C08 /* CameraTextureGenerater.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB0D98256196A300354C08 /* CameraTextureGenerater.swift */; };
+		C4BB0D9C256196ED00354C08 /* Texture.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB0D9B256196ED00354C08 /* Texture.swift */; };
+		C4BB0DA02561983C00354C08 /* SegmentationTextureGenerater.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB0D9F2561983C00354C08 /* SegmentationTextureGenerater.swift */; };
+		C4BB0DA3256199B200354C08 /* OverlayingTexturesGenerater.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB0DA2256199B200354C08 /* OverlayingTexturesGenerater.swift */; };
+		C4BB0DA625619AA400354C08 /* MetalVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB0DA525619AA400354C08 /* MetalVideoView.swift */; };
+		C4BB0DA925619C0400354C08 /* LiveMetalCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB0DA825619C0400354C08 /* LiveMetalCameraViewController.swift */; };
+		C4BB0DB52561A47900354C08 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = C4BB0DB42561A47900354C08 /* Shaders.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +47,15 @@
 		71BBE06022E3400E00E74F11 /* VideoCapture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
 		71BBE06122E3400E00E74F11 /* Measure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
 		71BBE06622E3446300E74F11 /* SegmentationResultMLMultiArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentationResultMLMultiArray.swift; sourceTree = "<group>"; };
+		C4BB0D91256195AE00354C08 /* MetalRenderingDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalRenderingDevice.swift; sourceTree = "<group>"; };
+		C4BB0D95256195F800354C08 /* Maths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maths.swift; sourceTree = "<group>"; };
+		C4BB0D98256196A300354C08 /* CameraTextureGenerater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraTextureGenerater.swift; sourceTree = "<group>"; };
+		C4BB0D9B256196ED00354C08 /* Texture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texture.swift; sourceTree = "<group>"; };
+		C4BB0D9F2561983C00354C08 /* SegmentationTextureGenerater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentationTextureGenerater.swift; sourceTree = "<group>"; };
+		C4BB0DA2256199B200354C08 /* OverlayingTexturesGenerater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayingTexturesGenerater.swift; sourceTree = "<group>"; };
+		C4BB0DA525619AA400354C08 /* MetalVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalVideoView.swift; sourceTree = "<group>"; };
+		C4BB0DA825619C0400354C08 /* LiveMetalCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveMetalCameraViewController.swift; sourceTree = "<group>"; };
+		C4BB0DB42561A47900354C08 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,11 +91,13 @@
 				71BBE04722E33B2500E74F11 /* Main.storyboard */,
 				71BBE04322E33B2500E74F11 /* AppDelegate.swift */,
 				71BBE04522E33B2500E74F11 /* LiveImageViewController.swift */,
+				C4BB0DA825619C0400354C08 /* LiveMetalCameraViewController.swift */,
 				71BBE05B22E33C6C00E74F11 /* StillImageViewController.swift */,
 				71BBE05E22E33F8D00E74F11 /* DrawingSegmentationView.swift */,
 				71BBE06622E3446300E74F11 /* SegmentationResultMLMultiArray.swift */,
 				71BBE06122E3400E00E74F11 /* Measure.swift */,
 				71BBE06022E3400E00E74F11 /* VideoCapture.swift */,
+				C4BB0D90256192F100354C08 /* MetalCamera */,
 				71BBE05D22E33CEA00E74F11 /* mlmodel */,
 				71BBE04A22E33B2600E74F11 /* Assets.xcassets */,
 				71BBE04C22E33B2600E74F11 /* LaunchScreen.storyboard */,
@@ -94,6 +114,37 @@
 				71BBE05922E33BF300E74F11 /* DeepLabV3Int8LUT.mlmodel */,
 			);
 			path = mlmodel;
+			sourceTree = "<group>";
+		};
+		C4BB0D90256192F100354C08 /* MetalCamera */ = {
+			isa = PBXGroup;
+			children = (
+				C4BB0D91256195AE00354C08 /* MetalRenderingDevice.swift */,
+				C4BB0DA525619AA400354C08 /* MetalVideoView.swift */,
+				C4BB0D98256196A300354C08 /* CameraTextureGenerater.swift */,
+				C4BB0D9F2561983C00354C08 /* SegmentationTextureGenerater.swift */,
+				C4BB0DA2256199B200354C08 /* OverlayingTexturesGenerater.swift */,
+				C4BB0D9B256196ED00354C08 /* Texture.swift */,
+				C4BB0DB32561A46B00354C08 /* Shaders */,
+				C4BB0D94256195E800354C08 /* Utils */,
+			);
+			path = MetalCamera;
+			sourceTree = "<group>";
+		};
+		C4BB0D94256195E800354C08 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C4BB0D95256195F800354C08 /* Maths.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		C4BB0DB32561A46B00354C08 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				C4BB0DB42561A47900354C08 /* Shaders.metal */,
+			);
+			path = Shaders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,16 +218,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4BB0DB52561A47900354C08 /* Shaders.metal in Sources */,
+				C4BB0DA3256199B200354C08 /* OverlayingTexturesGenerater.swift in Sources */,
 				71BBE06222E3400E00E74F11 /* VideoCapture.swift in Sources */,
 				71BBE05A22E33BF300E74F11 /* DeepLabV3Int8LUT.mlmodel in Sources */,
 				71BBE06322E3400E00E74F11 /* Measure.swift in Sources */,
+				C4BB0DA625619AA400354C08 /* MetalVideoView.swift in Sources */,
 				71BBE05822E33BEF00E74F11 /* DeepLabV3FP16.mlmodel in Sources */,
 				71BBE06722E3446300E74F11 /* SegmentationResultMLMultiArray.swift in Sources */,
+				C4BB0DA925619C0400354C08 /* LiveMetalCameraViewController.swift in Sources */,
+				C4BB0D9C256196ED00354C08 /* Texture.swift in Sources */,
 				71BBE05622E33BEB00E74F11 /* DeepLabV3.mlmodel in Sources */,
 				71BBE05C22E33C6C00E74F11 /* StillImageViewController.swift in Sources */,
+				C4BB0D96256195F800354C08 /* Maths.swift in Sources */,
+				C4BB0D92256195AE00354C08 /* MetalRenderingDevice.swift in Sources */,
 				71BBE04622E33B2500E74F11 /* LiveImageViewController.swift in Sources */,
+				C4BB0D99256196A300354C08 /* CameraTextureGenerater.swift in Sources */,
 				71BBE05F22E33F8D00E74F11 /* DrawingSegmentationView.swift in Sources */,
 				71BBE04422E33B2500E74F11 /* AppDelegate.swift in Sources */,
+				C4BB0DA02561983C00354C08 /* SegmentationTextureGenerater.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
