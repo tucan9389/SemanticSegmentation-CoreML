@@ -31,22 +31,7 @@ class LiveMetalCameraViewController: UIViewController {
     
     // MARK - Core ML model
     // DeepLabV3(iOS12+), DeepLabV3FP16(iOS12+), DeepLabV3Int8LUT(iOS12+)
-    let segmentationModel = DeepLabV3Int8LUT()
-
-//    11 Pro
-//    DeepLabV3        : 37 465 1
-//    DeepLabV3FP16    : 40 511 1
-//    DeepLabV3Int8LUT : 40 520 1
-//
-//    XS
-//    DeepLabV3        : 135 409 2
-//    DeepLabV3FP16    : 136 403 2
-//    DeepLabV3Int8LUT : 135 412 2
-//
-//    X
-//    DeepLabV3        : 177 531 1
-//    DeepLabV3FP16    : 177 530 1
-//    DeepLabV3Int8LUT : 177 517 1
+    let segmentationModel = DeepLabV3()
     
     // MARK: - Vision Properties
     var request: VNCoreMLRequest?
@@ -109,26 +94,11 @@ class LiveMetalCameraViewController: UIViewController {
         videoCapture.setUp(sessionPreset: .hd1280x720) { success in
             
             if success {
-                // UI에 비디오 미리보기 뷰 넣기
-//                if let previewLayer = self.videoCapture.previewLayer {
-//                    self.videoPreview.layer.addSublayer(previewLayer)
-//                    self.resizePreviewLayer()
-//                }
-                
                 // 초기설정이 끝나면 라이브 비디오를 시작할 수 있음
                 self.videoCapture.start()
             }
         }
     }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        // resizePreviewLayer()
-    }
-    
-//    func resizePreviewLayer() {
-//        videoCapture.previewLayer?.frame = videoPreview.bounds
-//    }
 }
 
 // MARK: - VideoCaptureDelegate
@@ -188,16 +158,6 @@ extension LiveMetalCameraViewController {
                 self?.👨‍🔧.🎬🤚()
                 self?.isInferencing = false
             }
-            
-//            let segmentationResultMLMultiArray = SegmentationResultMLMultiArray(mlMultiArray: segmentationmap)
-//            DispatchQueue.main.async { [weak self] in
-//                // update result
-//                self?.drawingView.segmentationmap = segmentationResultMLMultiArray
-//
-//                // end of measure
-//
-//                self?.isInferencing = false
-//            }
         } else {
             // end of measure
             self.👨‍🔧.🎬🤚()
@@ -218,21 +178,3 @@ extension LiveMetalCameraViewController: 📏Delegate {
         self.fpsLabel.text = "fps: \(self.maf3.averageValue)"
     }
 }
-
-//class MovingAverageFilter {
-//    private var arr: [Int] = []
-//    private let maxCount = 10
-//
-//    public func append(element: Int) {
-//        arr.append(element)
-//        if arr.count > maxCount {
-//            arr.removeFirst()
-//        }
-//    }
-//
-//    public var averageValue: Int {
-//        guard !arr.isEmpty else { return 0 }
-//        let sum = arr.reduce(0) { $0 + $1 }
-//        return Int(Double(sum) / Double(arr.count))
-//    }
-//}
