@@ -6,9 +6,9 @@
 
 This project is Object Segmentation on iOS with Core ML.<br>If you are interested in iOS + Machine Learning, visit [here](https://github.com/motlabs/iOS-Proejcts-with-ML-Models) you can see various DEMOs.<br>
 
-| Screenshot 1               | Screenshot 2               | Screenshot 3               | Screenshot 4               |
-| -------------------------- | -------------------------- | -------------------------- | -------------------------- |
-| ![](resource/IMG_3632.PNG) | ![](resource/IMG_3633.PNG) | ![](resource/IMG_3634.PNG) | ![](resource/IMG_3635.PNG) |
+| DEMO                                                         | Screenshot 1                                  | Screenshot 2                                  | Screenshot 3                                  |
+| ------------------------------------------------------------ | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| <img src="https://user-images.githubusercontent.com/37643248/99242802-167ad280-2843-11eb-959a-5fe3b169d8f0.gif" width=240px> | <img src="resource/IMG_3633.PNG" width=240px> | <img src="resource/IMG_3632.PNG" width=240px> | <img src="resource/IMG_3635.PNG" width=240px> |
 
 ## How it works
 
