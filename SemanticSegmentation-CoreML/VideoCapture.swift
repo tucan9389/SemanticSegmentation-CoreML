@@ -3,6 +3,7 @@
 //  Awesome ML
 //
 //  Created by Eugene Bokhan on 3/13/18.
+//  Updated by Doyoung Gwak on 03/07/2018.
 //  Copyright © 2018 Eugene Bokhan. All rights reserved.
 //
 
@@ -11,7 +12,7 @@ import AVFoundation
 import CoreVideo
 
 public protocol VideoCaptureDelegate: class {
-    func videoCapture(_ capture: VideoCapture, didCaptureVideoFrame: CVPixelBuffer?/*, timestamp: CMTime*/)
+    func videoCapture(_ capture: VideoCapture, didCaptureVideoSampleBuffer: CMSampleBuffer)
 }
 
 public class VideoCapture: NSObject {
@@ -23,7 +24,7 @@ public class VideoCapture: NSObject {
     let videoOutput = AVCaptureVideoDataOutput()
     let queue = DispatchQueue(label: "com.tucan9389.camera-queue")
     
-    //    var lastTimestamp = CMTime()
+    var videoTextureCache: CVMetalTextureCache?
     
     public func setUp(sessionPreset: AVCaptureSession.Preset = .vga640x480,
                       completion: @escaping (Bool) -> Void) {
@@ -51,12 +52,8 @@ public class VideoCapture: NSObject {
             captureSession.addInput(videoInput)
         }
         
-        let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        previewLayer.videoGravity = AVLayerVideoGravity.resizeAspect
-        previewLayer.connection?.videoOrientation = .portrait
-        self.previewLayer = previewLayer
-        
         let settings: [String : Any] = [
+            kCVPixelBufferMetalCompatibilityKey as String: true,
             kCVPixelBufferPixelFormatTypeKey as String: NSNumber(value: kCVPixelFormatType_32BGRA),
         ]
         
@@ -73,6 +70,8 @@ public class VideoCapture: NSObject {
         
         captureSession.commitConfiguration()
         
+        CVMetalTextureCacheCreate(kCFAllocatorDefault, nil, sharedMetalRenderingDevice.device, nil, &videoTextureCache)
+        
         let success = true
         completion(success)
     }
@@ -88,20 +87,20 @@ public class VideoCapture: NSObject {
             captureSession.stopRunning()
         }
     }
+    
+    public func makePreview() -> AVCaptureVideoPreviewLayer? {
+        guard self.previewLayer == nil else { return self.previewLayer }
+        let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        previewLayer.videoGravity = AVLayerVideoGravity.resizeAspect
+        previewLayer.connection?.videoOrientation = .portrait
+        self.previewLayer = previewLayer
+        return previewLayer
+    }
 }
 
 extension VideoCapture: AVCaptureVideoDataOutputSampleBufferDelegate {
     public func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        // Because lowering the capture device's FPS looks ugly in the preview,
-        // we capture at full speed but only call the delegate at its desired
-        // framerate.
-        //        let timestamp = CMSampleBufferGetPresentationTimeStamp(sampleBuffer)
-        //        let deltaTime = timestamp - lastTimestamp
-        //        if deltaTime >= CMTimeMake(1, Int32(fps)) {
-        //            lastTimestamp = timestamp
-        let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)
-        delegate?.videoCapture(self, didCaptureVideoFrame: imageBuffer/*, timestamp: timestamp*/)
-        //        }
+        delegate?.videoCapture(self, didCaptureVideoSampleBuffer: sampleBuffer)
     }
     
     public func captureOutput(_ output: AVCaptureOutput, didDrop sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {

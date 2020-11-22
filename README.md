@@ -6,9 +6,9 @@
 
 This project is Object Segmentation on iOS with Core ML.<br>If you are interested in iOS + Machine Learning, visit [here](https://github.com/motlabs/iOS-Proejcts-with-ML-Models) you can see various DEMOs.<br>
 
-| Screenshot 1 | Screenshot 2 | Screenshot 3 | Screenshot 4 |
-| ------------ | ------------ | ------------ | ------------ |
-| ![](resource/IMG_3632.PNG) | ![](resource/IMG_3633.PNG) | ![](resource/IMG_3634.PNG) | ![](resource/IMG_3635.PNG) |
+| DEMO                                                         | Screenshot 1                                  | Screenshot 2                                  | Screenshot 3                                  |
+| ------------------------------------------------------------ | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| <img src="https://user-images.githubusercontent.com/37643248/99242802-167ad280-2843-11eb-959a-5fe3b169d8f0.gif" width=240px> | <img src="resource/IMG_3633.PNG" width=240px> | <img src="resource/IMG_3632.PNG" width=240px> | <img src="resource/IMG_3635.PNG" width=240px> |
 
 ## How it works
 
@@ -28,27 +28,35 @@ Download model from [apple's model page](https://developer.apple.com/machine-lea
 
 ### Matadata
 
-|            | input node    | output node    |   size   |
-| :--------: | :-----------: | :------------: | :------: |
-| DeepLabV3     | `[1, 513, 513, 3]`<br>name: `image` | `[513, 513]`<br>name: `semanticPredictions` | 8.6 MB |
-| DeepLabV3FP16 | `[1, 513, 513, 3]`<br>name: `image` | `[513, 513]`<br>name: `semanticPredictions` | 4.3 MB |
+|                  |             input node              |                 output node                 |  size  |
+| :--------------: | :---------------------------------: | :-----------------------------------------: | :----: |
+|    DeepLabV3     | `[1, 513, 513, 3]`<br>name: `image` | `[513, 513]`<br>name: `semanticPredictions` | 8.6 MB |
+|  DeepLabV3FP16   | `[1, 513, 513, 3]`<br>name: `image` | `[513, 513]`<br>name: `semanticPredictions` | 4.3 MB |
 | DeepLabV3Int8LUT | `[1, 513, 513, 3]`<br>name: `image` | `[513, 513]`<br>name: `semanticPredictions` | 2.3 MB |
 
 ### Inference Time
 
-| Device        | Inference Time | Total Time |
-| ------------- | :------: | :-----: |
-| iPhone XS Max | **133 ms** | 434 ms |
-| iPhone XS     | 135 ms | 411 ms |
-| iPhone XR     | 133 ms | **402 ms** |
-| iPhone X      | 178 ms | 509 ms |
-| iPhone 8+     | 180 ms | 563 ms |
-| iPhone 8      | 189 ms | 529 ms |
-| iPhone 7+     | 240 ms | 667 ms |
-| iPhone 7      | 247 ms | 688 ms |
-| iPhone 6S +   | 309 ms | 1015 ms |
-| iPhone 6+     | 1888 ms | 2753 ms |
+| Device            | Inference Time | Total Time (GPU) | Total Time (CPU) |
+| ----------------- | :------------: | :--------------: | :--------------: |
+| iPhone 12 Pro     |       ⏲        |        ⏲         |        ⏲         |
+| iPhone 12 Pro Max |       ⏲        |        ⏲         |        ⏲         |
+| iPhone 12         |       ⏲        |        ⏲         |        ⏲         |
+| iPhone 12 Mini    |       ⏲        |        ⏲         |        ⏲         |
+| iPhone 11 Pro     |     39 ms      |      40 ms       |      290 ms      |
+| iPhone 11 Pro Max |   **35 ms**    |    **36 ms**     |    **280 ms**    |
+| iPhone 11         |       ⏲        |        ⏲         |        ⏲         |
+| iPhone SE (2nd)   |       ⏲        |        ⏲         |        ⏲         |
+| iPhone XS Max     |     133 ms     |        ⏲         |      434 ms      |
+| iPhone XS         |     135 ms     |        ⏲         |      411 ms      |
+| iPhone XR         |     133 ms     |        ⏲         |      402 ms      |
+| iPhone X          |     178 ms     |        ⏲         |      509 ms      |
+| iPhone 8+         |     180 ms     |        ⏲         |      563 ms      |
+| iPhone 8          |     189 ms     |        ⏲         |      529 ms      |
+| iPhone 7+         |     240 ms     |        ⏲         |      667 ms      |
+| iPhone 7          |     247 ms     |        ⏲         |      688 ms      |
+| iPhone 6S +       |     309 ms     |        ⏲         |     1015 ms      |
 
+⏲: need to measure
 
 ## See also
 

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OKs-u2-zxf">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OKs-u2-zxf">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -73,6 +72,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="JAF-1N-GU4" firstAttribute="width" secondItem="JAF-1N-GU4" secondAttribute="height" multiplier="3:4" priority="750" id="1jT-Jl-EPl"/>
@@ -86,7 +86,6 @@
                             <constraint firstItem="JAF-1N-GU4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mJD-mu-vS6"/>
                             <constraint firstItem="JAF-1N-GU4" firstAttribute="top" secondItem="EeP-4W-fyk" secondAttribute="bottom" id="p7e-cV-nny"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Live Image" id="BjE-eP-ACy"/>
                     <connections>
@@ -99,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+            <point key="canvasLocation" x="1048" y="-510"/>
         </scene>
         <!--Still Image View Controller-->
         <scene sceneID="IS1-oH-MuW">
@@ -121,6 +120,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="pfR-pQ-aIK"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gcq-ZI-Sh1" firstAttribute="width" secondItem="R9C-5j-ZDa" secondAttribute="width" id="7HO-59-VjE"/>
@@ -131,7 +131,6 @@
                             <constraint firstItem="gcq-ZI-Sh1" firstAttribute="centerX" secondItem="R9C-5j-ZDa" secondAttribute="centerX" id="zYu-l7-wc3"/>
                             <constraint firstItem="gcq-ZI-Sh1" firstAttribute="centerY" secondItem="R9C-5j-ZDa" secondAttribute="centerY" id="zkt-y0-Zxs"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="pfR-pQ-aIK"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZKO-r5-lBo">
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="WbG-gX-bSA">
@@ -149,16 +148,94 @@
             </objects>
             <point key="canvasLocation" x="1813" y="806"/>
         </scene>
+        <!--GPU Live-->
+        <scene sceneID="5c9-lY-u7Z">
+            <objects>
+                <viewController id="uso-ud-VWq" customClass="LiveMetalCameraViewController" customModule="SemanticSegmentation_CoreML" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BrB-wO-R8s">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mtkView contentMode="scaleAspectFit" colorPixelFormat="BGRA8Unorm" depthStencilPixelFormat="Depth32Float" translatesAutoresizingMaskIntoConstraints="NO" id="jI5-DE-WCD" customClass="MetalVideoView" customModule="SemanticSegmentation_CoreML" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="69" width="414" height="744"/>
+                            </mtkView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lCS-RK-DG2">
+                                <rect key="frame" x="0.0" y="44" width="414" height="25"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inference: xxx ms" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eCN-te-kgA">
+                                        <rect key="frame" x="16" y="8" width="120.5" height="9"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="9"/>
+                                        <color key="textColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Execution: xxx ms" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="m83-Re-i3W">
+                                        <rect key="frame" x="146.5" y="8" width="121" height="9"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="9"/>
+                                        <color key="textColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="fps: xx" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sLS-L3-c6j">
+                                        <rect key="frame" x="277.5" y="8" width="120.5" height="9"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="9"/>
+                                        <color key="textColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.80182470029999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="eCN-te-kgA" firstAttribute="top" secondItem="lCS-RK-DG2" secondAttribute="top" constant="8" id="5UN-SY-jbH"/>
+                                    <constraint firstItem="sLS-L3-c6j" firstAttribute="width" secondItem="eCN-te-kgA" secondAttribute="width" id="95R-6u-byv"/>
+                                    <constraint firstItem="m83-Re-i3W" firstAttribute="leading" secondItem="eCN-te-kgA" secondAttribute="trailing" constant="10" id="BId-YR-cBo"/>
+                                    <constraint firstAttribute="bottom" secondItem="eCN-te-kgA" secondAttribute="bottom" constant="8" id="BXN-p5-KoK"/>
+                                    <constraint firstItem="sLS-L3-c6j" firstAttribute="leading" secondItem="m83-Re-i3W" secondAttribute="trailing" constant="10" id="Bop-eV-MSK"/>
+                                    <constraint firstItem="sLS-L3-c6j" firstAttribute="centerY" secondItem="lCS-RK-DG2" secondAttribute="centerY" id="MXH-eB-cwq"/>
+                                    <constraint firstItem="eCN-te-kgA" firstAttribute="centerY" secondItem="lCS-RK-DG2" secondAttribute="centerY" id="Mo0-Rx-dmc"/>
+                                    <constraint firstItem="m83-Re-i3W" firstAttribute="width" secondItem="eCN-te-kgA" secondAttribute="width" id="O7V-sO-IJO"/>
+                                    <constraint firstItem="eCN-te-kgA" firstAttribute="leading" secondItem="lCS-RK-DG2" secondAttribute="leading" constant="16" id="a1R-SY-5ez"/>
+                                    <constraint firstAttribute="trailing" secondItem="sLS-L3-c6j" secondAttribute="trailing" constant="16" id="cDC-01-F57"/>
+                                    <constraint firstItem="m83-Re-i3W" firstAttribute="centerY" secondItem="eCN-te-kgA" secondAttribute="centerY" id="eay-uz-t09"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZRo-26-PEe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZRo-26-PEe" firstAttribute="trailing" secondItem="jI5-DE-WCD" secondAttribute="trailing" id="4mM-Rd-x23"/>
+                            <constraint firstItem="jI5-DE-WCD" firstAttribute="leading" secondItem="ZRo-26-PEe" secondAttribute="leading" id="TO8-zS-mBB"/>
+                            <constraint firstItem="lCS-RK-DG2" firstAttribute="leading" secondItem="ZRo-26-PEe" secondAttribute="leading" id="UEj-eA-eVv"/>
+                            <constraint firstItem="ZRo-26-PEe" firstAttribute="bottom" secondItem="jI5-DE-WCD" secondAttribute="bottom" id="ehq-0u-Is5"/>
+                            <constraint firstItem="lCS-RK-DG2" firstAttribute="top" secondItem="ZRo-26-PEe" secondAttribute="top" id="on3-i6-co5"/>
+                            <constraint firstItem="jI5-DE-WCD" firstAttribute="top" secondItem="lCS-RK-DG2" secondAttribute="bottom" id="rEI-by-IkZ"/>
+                            <constraint firstItem="lCS-RK-DG2" firstAttribute="trailing" secondItem="ZRo-26-PEe" secondAttribute="trailing" id="utf-xU-S7a"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="GPU Live" id="sPp-wC-0rq"/>
+                    <connections>
+                        <outlet property="etimeLabel" destination="m83-Re-i3W" id="cFc-OO-qCc"/>
+                        <outlet property="fpsLabel" destination="sLS-L3-c6j" id="RHv-qJ-qnz"/>
+                        <outlet property="inferenceLabel" destination="eCN-te-kgA" id="pEQ-QX-SIr"/>
+                        <outlet property="metalVideoPreview" destination="jI5-DE-WCD" id="vOH-hS-bZx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0a6-Ns-dFL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="151.33928571428569"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="caK-0V-iKQ">
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="OKs-u2-zxf" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="k8X-uG-0Ob">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="uso-ud-VWq" kind="relationship" relationship="viewControllers" id="VPy-Xe-Qw8"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="0lQ-nP-qr8"/>
                         <segue destination="i8C-c5-qYh" kind="relationship" relationship="viewControllers" id="90f-l7-yLE"/>
                     </connections>
@@ -187,4 +264,9 @@
             <point key="canvasLocation" x="1047.8260869565217" y="805.58035714285711"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
