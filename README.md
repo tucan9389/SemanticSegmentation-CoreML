@@ -12,7 +12,9 @@ This project is Object Segmentation on iOS with Core ML.<br>If you are intereste
 
 ## How it works
 
-> (Preparing...)
+> When use Metal
+
+![image](https://user-images.githubusercontent.com/37643248/100520189-da9b2200-31df-11eb-928f-db6f503ea4e0.png)
 
 ## Requirements
 
