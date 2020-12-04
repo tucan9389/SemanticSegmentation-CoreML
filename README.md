@@ -40,22 +40,22 @@ Download model from [apple's model page](https://developer.apple.com/machine-lea
 
 | Device            | Inference Time | Total Time (GPU) | Total Time (CPU) |
 | ----------------- | :------------: | :--------------: | :--------------: |
-| iPhone 12 Pro     |       ⏲        |        ⏲         |        ⏲         |
-| iPhone 12 Pro Max |       ⏲        |        ⏲         |        ⏲         |
-| iPhone 12         |       ⏲        |        ⏲         |        ⏲         |
-| iPhone 12 Mini    |       ⏲        |        ⏲         |        ⏲         |
+| iPhone 12 Pro     |   **29 ms**    |    **29 ms**     |      240 ms      |
+| iPhone 12 Pro Max |       ⏲        |        ⏲        |        ⏲        |
+| iPhone 12         |     30 ms      |      31 ms       |     253 ms       |
+| iPhone 12 Mini    |     29 ms      |      30 ms       |   **226 ms**     |
 | iPhone 11 Pro     |     39 ms      |      40 ms       |      290 ms      |
-| iPhone 11 Pro Max |   **35 ms**    |    **36 ms**     |    **280 ms**    |
-| iPhone 11         |       ⏲        |        ⏲         |        ⏲         |
-| iPhone SE (2nd)   |       ⏲        |        ⏲         |        ⏲         |
-| iPhone XS Max     |     133 ms     |        ⏲         |      434 ms      |
-| iPhone XS         |     135 ms     |        ⏲         |      411 ms      |
+| iPhone 11 Pro Max |     35 ms      |      36 ms       |      280 ms      |
+| iPhone 11         |       ⏲        |        ⏲         |        ⏲        |
+| iPhone SE (2nd)   |       ⏲        |        ⏲         |        ⏲        |
+| iPhone XS Max     |       ⏲        |        ⏲         |        ⏲        |
+| iPhone XS         |     54 ms      |      55 ms        |      327 ms      |
 | iPhone XR         |     133 ms     |        ⏲         |      402 ms      |
-| iPhone X          |     178 ms     |        ⏲         |      509 ms      |
-| iPhone 8+         |     180 ms     |        ⏲         |      563 ms      |
+| iPhone X          |     137 ms     |      143 ms       |      376 ms      |
+| iPhone 8+         |     140 ms     |      146 ms       |      420 ms      |
 | iPhone 8          |     189 ms     |        ⏲         |      529 ms      |
 | iPhone 7+         |     240 ms     |        ⏲         |      667 ms      |
-| iPhone 7          |     247 ms     |        ⏲         |      688 ms      |
+| iPhone 7          |     192 ms     |      208 ms       |      528 ms      |
 | iPhone 6S +       |     309 ms     |        ⏲         |     1015 ms      |
 
 ⏲: need to measure
