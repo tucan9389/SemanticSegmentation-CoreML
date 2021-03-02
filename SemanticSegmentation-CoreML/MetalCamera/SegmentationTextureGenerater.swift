@@ -38,7 +38,7 @@ class SegmentationTextureGenerater: NSObject {
 
         let renderPassDescriptor = MTLRenderPassDescriptor()
         let attachment = renderPassDescriptor.colorAttachments[0]
-        attachment?.clearColor = MTLClearColorMake(1, 0, 0, 1) // r, g, b, a
+        attachment?.clearColor = .red
         attachment?.texture = outputTexture.texture
         attachment?.loadAction = .clear
         attachment?.storeAction = .store
@@ -66,5 +66,11 @@ class SegmentationTextureGenerater: NSObject {
         commandBuffer?.commit()
 
         return outputTexture
+    }
+}
+
+extension MTLClearColor {
+    static var red: Self {
+        return MTLClearColorMake(1, 0, 0, 1) // r, g, b, a
     }
 }
