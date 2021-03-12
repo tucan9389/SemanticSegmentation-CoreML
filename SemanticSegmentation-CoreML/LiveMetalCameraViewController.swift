@@ -20,7 +20,7 @@ class LiveMetalCameraViewController: UIViewController {
     @IBOutlet weak var fpsLabel: UILabel!
     
     var cameraTextureGenerater = CameraTextureGenerater()
-    var segmentationTextureGenerater = SegmentationTextureGenerater()
+    var multitargetSegmentationTextureGenerater = MultitargetSegmentationTextureGenerater()
     var overlayingTexturesGenerater = OverlayingTexturesGenerater()
     
     var cameraTexture: Texture?
@@ -30,8 +30,14 @@ class LiveMetalCameraViewController: UIViewController {
     var videoCapture: VideoCapture!
     
     // MARK - Core ML model
-    // DeepLabV3(iOS12+), DeepLabV3FP16(iOS12+), DeepLabV3Int8LUT(iOS12+)
-    let segmentationModel = DeepLabV3()
+    /// DeepLabV3(iOS12+), DeepLabV3FP16(iOS12+), DeepLabV3Int8LUT(iOS12+)
+    /// - labels: ["background", "aeroplane", "bicycle", "bird", "boat", "bottle", "bus", "car", "cat", "chair", "cow", "diningtable", "dog", "horse", "motorbike", "person", "pottedplant", "sheep", "sofa", "train", "tv"]
+    /// - number of labels: 21
+    /// FaceParsing(iOS14+)
+    /// - labels:  ["background", "skin", "l_brow", "r_brow", "l_eye", "r_eye", "eye_g", "l_ear", "r_ear", "ear_r", "nose", "mouth", "u_lip", "l_lip", "neck", "neck_l", "cloth", "hair", "hat"]
+    /// - number of labels: 19
+    lazy var segmentationModel = { return try! DeepLabV3() }()
+    let numberOfLabels = 21 // <#if you changed the segmentationModel, you have to change the numberOfLabels#>
     
     // MARK: - Vision Properties
     var request: VNCoreMLRequest?
@@ -138,16 +144,13 @@ extension LiveMetalCameraViewController {
         
         if let observations = request.results as? [VNCoreMLFeatureValueObservation],
             let segmentationmap = observations.first?.featureValue.multiArrayValue {
-            
             guard let row = segmentationmap.shape[0] as? Int,
                 let col = segmentationmap.shape[1] as? Int else {
                     return
             }
             
-            let targetClass = 15 // index of human category
-            
             guard let cameraTexture = cameraTexture,
-                  let segmentationTexture = segmentationTextureGenerater.texture(segmentationmap, row, col, targetClass) else {
+                  let segmentationTexture = multitargetSegmentationTextureGenerater.texture(segmentationmap, row, col, numberOfLabels) else {
                 return
             }
             

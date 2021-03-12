@@ -104,14 +104,62 @@ typedef struct
 fragment float4 segmentation_render_target(Vertex vertex_data [[ stage_in ]],
                                            constant SegmentationValue *segmentation [[ buffer(0) ]],
                                            constant SegmentationUniform& uniform [[ buffer(1) ]])
-
 {
     int index = int(vertex_data.position.x) + int(vertex_data.position.y) * uniform.width;
     if(segmentation[index].classNum == uniform.targetClass) {
-        return float4(1.0, 0, 0, 1.0);
+        return float4(1.0, 0, 0, 1.0); // red // (r, g, b, a)
     }
 
-    return float4(0,0,0,1.0);
+    return float4(0,0,0,1.0); // black
+};
+
+typedef struct
+{
+    int32_t numberOfClasses;
+    int32_t width;
+    int32_t height;
+} MultitargetSegmentationUniform;
+
+fragment float4 multitarget_segmentation_render_target(Vertex vertex_data [[ stage_in ]],
+                                           constant SegmentationValue *segmentation [[ buffer(0) ]],
+                                           constant MultitargetSegmentationUniform& uniform [[ buffer(1) ]])
+{
+    int index = int(vertex_data.position.x) + int(vertex_data.position.y) * uniform.width;
+    
+    if (segmentation[index].classNum == 0) { // background case
+        return float4(0,0,0,1.0); // black
+    }
+    
+    float h_ratio = float(segmentation[index].classNum) / float(uniform.numberOfClasses);
+    h_ratio = (1.0 - h_ratio) + 0.12/*extra value*/;
+    h_ratio = h_ratio > 1.0 ? h_ratio - 1.0 : h_ratio;
+    float h = 360 * h_ratio;
+    
+    float angle = h; //(h >= 360.0 ? 0.0 : h);
+    float sector = angle / 60.0; // Sector
+    float i = floor(sector);
+    int i_int = int(sector);
+    float f = sector - i; // Factorial part of h
+    
+    float p = 0.0;
+    float q = 1.0 - f;
+    float t = f;
+    
+    if (i_int == 0) {
+        return float4(1.0, t, p, 1.0);
+    } else if (i_int == 1) {
+        return float4(q, 1.0, p, 1.0);
+    } else if (i_int == 2) {
+        return float4(p, 1.0, t, 1.0);
+    } else if (i_int == 3) {
+        return float4(p, q, 1.0, 1.0);
+    } else if (i_int == 4) {
+        return float4(t, p, 1.0, 1.0);
+    } else {
+        return float4(1.0, p, q, 1.0);
+    }
+    
+    return float4(0,0,0,1.0); // black
 };
 
 fragment half4 lookupFragment(TwoInputVertex fragmentInput [[stage_in]],
