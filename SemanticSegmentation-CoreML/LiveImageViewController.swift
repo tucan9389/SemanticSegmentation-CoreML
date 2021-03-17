@@ -24,7 +24,10 @@ class LiveImageViewController: UIViewController {
     
     // MARK - Core ML model
     // DeepLabV3(iOS12+), DeepLabV3FP16(iOS12+), DeepLabV3Int8LUT(iOS12+)
-    let segmentationModel = DeepLabV3Int8LUT()
+    // FaceParsing(iOS14+)
+    lazy var segmentationModel = {
+        return try! DeepLabV3()
+    }()
 
 //    11 Pro
 //    DeepLabV3        : 37 465 1

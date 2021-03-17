@@ -6,9 +6,9 @@
 
 This project is Object Segmentation on iOS with Core ML.<br>If you are interested in iOS + Machine Learning, visit [here](https://github.com/motlabs/iOS-Proejcts-with-ML-Models) you can see various DEMOs.<br>
 
-| DEMO                                                         | Screenshot 1                                  | Screenshot 2                                  | Screenshot 3                                  |
-| ------------------------------------------------------------ | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
-| <img src="https://user-images.githubusercontent.com/37643248/99242802-167ad280-2843-11eb-959a-5fe3b169d8f0.gif" width=240px> | <img src="resource/IMG_3633.PNG" width=240px> | <img src="resource/IMG_3632.PNG" width=240px> | <img src="resource/IMG_3635.PNG" width=240px> |
+| DeepLabV3-DEMO1                                              | FaseParsing-DEMO                                             | DeepLabV3-DEMO-2                              | DeepLabV3-DEMO-3                              |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | --------------------------------------------- | --------------------------------------------- |
+| <img src="https://user-images.githubusercontent.com/37643248/99242802-167ad280-2843-11eb-959a-5fe3b169d8f0.gif" width=240px> | <img src="https://user-images.githubusercontent.com/37643248/110972921-e8943d80-839f-11eb-9559-2a32d3b56de0.gif" width=240px> | <img src="resource/IMG_3633.PNG" width=240px> | <img src="resource/IMG_3635.PNG" width=240px> |
 
 ## How it works
 
@@ -22,7 +22,7 @@ This project is Object Segmentation on iOS with Core ML.<br>If you are intereste
 - iOS 12.0+
 - Swift 5
 
-## Model
+## Models
 
 ### Download
 
@@ -30,13 +30,14 @@ Download model from [apple's model page](https://developer.apple.com/machine-lea
 
 ### Matadata
 
-|                  |             input node              |                 output node                 |  size  |
-| :--------------: | :---------------------------------: | :-----------------------------------------: | :----: |
-|    DeepLabV3     | `[1, 513, 513, 3]`<br>name: `image` | `[513, 513]`<br>name: `semanticPredictions` | 8.6 MB |
-|  DeepLabV3FP16   | `[1, 513, 513, 3]`<br>name: `image` | `[513, 513]`<br>name: `semanticPredictions` | 4.3 MB |
-| DeepLabV3Int8LUT | `[1, 513, 513, 3]`<br>name: `image` | `[513, 513]`<br>name: `semanticPredictions` | 2.3 MB |
+| Name             |           Input           |             Output             |  Size   | iOS version+ |                           Download                           |
+| :--------------- | :-----------------------: | :----------------------------: | :-----: | :----------: | :----------------------------------------------------------: |
+| DeepLabV3        | `Image (Color 513 × 513)` | `MultiArray (Int32 513 × 513)` | 8.6 MB  |  iOS 12.0+   | [link](https://developer.apple.com/machine-learning/models/) |
+| DeepLabV3FP16    | `Image (Color 513 × 513)` | `MultiArray (Int32 513 × 513)` | 4.3 MB  |  iOS 12.0+   | [link](https://developer.apple.com/machine-learning/models/) |
+| DeepLabV3Int8LUT | `Image (Color 513 × 513)` | `MultiArray (Int32 513 × 513)` | 2.3 MB  |  iOS 12.0+   | [link](https://developer.apple.com/machine-learning/models/) |
+| FaceParsing      | `Image (Color 512 × 512)` | `MultiArray (Int32)` 512 × 512 | 52.7 MB |  iOS 14.0+   | [link](https://github.com/tucan9389/SemanticSegmentation-CoreML/releases/download/support-face-parsing/FaceParsing.mlmodel) |
 
-### Inference Time
+### Inference Time − DeepLabV3
 
 | Device            | Inference Time | Total Time (GPU) | Total Time (CPU) |
 | ----------------- | :------------: | :--------------: | :--------------: |
@@ -60,9 +61,38 @@ Download model from [apple's model page](https://developer.apple.com/machine-lea
 
 ⏲: need to measure
 
+### Inference Time − FaceParsing
+
+| Device        | Inference Time | Total Time (GPU) | Total Time (CPU) |
+| ------------- | :------------: | :--------------: | :--------------: |
+| iPhone 12 Pro |       ⏲        |        ⏲         |        ⏲         |
+| iPhone 11 Pro |     37 ms      |      37 ms       |        ⏲         |
+
+### Labels − DeepLabV3
+
+```
+# total 21
+["background", "aeroplane", "bicycle", "bird", "boat", 
+"bottle", "bus", "car", "cat", "chair", 
+"cow", "diningtable", "dog", "horse", "motorbike", 
+"person", "pottedplant", "sheep", "sofa", "train", 
+"tv"]
+```
+
+### Labels − FaceParsing
+
+```
+# total 19
+["background", "skin", "l_brow", "r_brow", "l_eye", 
+"r_eye", "eye_g", "l_ear", "r_ear", "ear_r", 
+"nose", "mouth", "u_lip", "l_lip", "neck", 
+"neck_l", "cloth", "hair", "hat"]
+```
+
 ## See also
 
 - [motlabs/iOS-Proejcts-with-ML-Models](https://github.com/motlabs/iOS-Proejcts-with-ML-Models)<br>
   : The challenge using machine learning model created from tensorflow on iOS
-- [deeplab on TensorFlow](https://github.com/tensorflow/models/tree/master/research/deeplab)<br>
+- [DeepLab on TensorFlow](https://github.com/tensorflow/models/tree/master/research/deeplab)<br>
   : The repository providing DeepLabV3 model
+- [FaceParsing](https://github.com/zllrunning/face-parsing.PyTorch)<Br>: The repository providing the FaceParsing pytorch model
