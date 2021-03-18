@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OKs-u2-zxf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OKs-u2-zxf">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -87,7 +87,7 @@
                             <constraint firstItem="JAF-1N-GU4" firstAttribute="top" secondItem="EeP-4W-fyk" secondAttribute="bottom" id="p7e-cV-nny"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Live Image" id="BjE-eP-ACy"/>
+                    <tabBarItem key="tabBarItem" title="Live Image" image="camera" catalog="system" id="BjE-eP-ACy"/>
                     <connections>
                         <outlet property="drawingView" destination="YZz-xg-qgT" id="9FY-Vh-I2f"/>
                         <outlet property="etimeLabel" destination="vZR-qF-YQW" id="SOM-Cq-I33"/>
@@ -133,7 +133,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZKO-r5-lBo">
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="WbG-gX-bSA">
+                        <barButtonItem key="rightBarButtonItem" image="photo.on.rectangle.fill" catalog="system" id="WbG-gX-bSA">
                             <connections>
                                 <action selector="tapCamera:" destination="X7F-xP-m0H" id="392-Ha-7fA"/>
                             </connections>
@@ -212,7 +212,7 @@
                             <constraint firstItem="lCS-RK-DG2" firstAttribute="trailing" secondItem="ZRo-26-PEe" secondAttribute="trailing" id="utf-xU-S7a"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="GPU Live" id="sPp-wC-0rq"/>
+                    <tabBarItem key="tabBarItem" title="GPU Live" image="memorychip" catalog="system" id="sPp-wC-0rq"/>
                     <connections>
                         <outlet property="etimeLabel" destination="m83-Re-i3W" id="cFc-OO-qCc"/>
                         <outlet property="fpsLabel" destination="sLS-L3-c6j" id="RHv-qJ-qnz"/>
@@ -235,9 +235,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="i8C-c5-qYh" kind="relationship" relationship="viewControllers" id="90f-l7-yLE"/>
                         <segue destination="uso-ud-VWq" kind="relationship" relationship="viewControllers" id="VPy-Xe-Qw8"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="0lQ-nP-qr8"/>
-                        <segue destination="i8C-c5-qYh" kind="relationship" relationship="viewControllers" id="90f-l7-yLE"/>
+                        <segue destination="XeG-xj-c5B" kind="relationship" relationship="viewControllers" id="VEF-Gl-ANX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wKr-1F-xNj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -248,7 +249,7 @@
         <scene sceneID="Rnx-nh-ynt">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="i8C-c5-qYh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Still Image" id="1zq-Nq-tz6"/>
+                    <tabBarItem key="tabBarItem" title="Still Image" image="photo" catalog="system" id="1zq-Nq-tz6"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VK7-al-5iK">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -263,8 +264,141 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="805.58035714285711"/>
         </scene>
+        <!--Apps-->
+        <scene sceneID="FZv-NB-zLI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XeG-xj-c5B" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Apps" image="list.bullet.rectangle" catalog="system" id="Q3x-C0-V0r"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4HX-Ts-OCH">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7Ff-Mb-VPg" kind="relationship" relationship="rootViewController" id="sPy-cz-U5h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7qb-ne-2Fu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1048" y="1479"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="vcO-mZ-dZz">
+            <objects>
+                <tableViewController id="7Ff-Mb-VPg" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NFo-O6-Ykz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="Vha-KX-gob">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="JPd-Vk-ofP" style="IBUITableViewCellStyleDefault" id="T8U-Ih-k1d">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="T8U-Ih-k1d" id="lbN-e5-faT">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detect face and than segment with FaceParsing" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JPd-Vk-ofP">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="iHA-FX-W3I" kind="show" id="FFf-ND-lvQ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="7Ff-Mb-VPg" id="7Mb-2r-a9M"/>
+                            <outlet property="delegate" destination="7Ff-Mb-VPg" id="PMX-c3-wmv"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="ZhZ-DG-Go2"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c34-Iu-rki" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1812" y="1491"/>
+        </scene>
+        <!--Tracking Face and Segmenting-->
+        <scene sceneID="nNY-jl-xHy">
+            <objects>
+                <viewController id="iHA-FX-W3I" customClass="LiveFaceDetectionAndFaceParsingViewController" customModule="SemanticSegmentation_CoreML" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Edf-em-ItF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mtkView contentMode="scaleToFill" colorPixelFormat="BGRA8Unorm" depthStencilPixelFormat="Depth32Float" translatesAutoresizingMaskIntoConstraints="NO" id="Q0M-Vb-6ZM" customClass="MetalVideoView" customModule="SemanticSegmentation_CoreML" customModuleProvider="target">
+                                <rect key="frame" x="2" y="90" width="175" height="233"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Q0M-Vb-6ZM" secondAttribute="height" multiplier="3:4" id="1Cc-hv-az7"/>
+                                </constraints>
+                            </mtkView>
+                            <mtkView contentMode="scaleToFill" colorPixelFormat="BGRA8Unorm" depthStencilPixelFormat="Depth32Float" translatesAutoresizingMaskIntoConstraints="NO" id="Fdq-JU-CBt" customClass="MetalVideoView" customModule="SemanticSegmentation_CoreML" customModuleProvider="target">
+                                <rect key="frame" x="179" y="90" width="233" height="233"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Fdq-JU-CBt" secondAttribute="height" multiplier="1:1" id="z9P-Pg-cSr"/>
+                                </constraints>
+                            </mtkView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2QB-Dj-Mnp">
+                                <rect key="frame" x="2" y="325" width="410" height="486"/>
+                                <subviews>
+                                    <mtkView contentMode="scaleToFill" colorPixelFormat="BGRA8Unorm" depthStencilPixelFormat="Depth32Float" translatesAutoresizingMaskIntoConstraints="NO" id="Zhn-Xr-KF1" customClass="MetalVideoView" customModule="SemanticSegmentation_CoreML" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="38" width="410" height="410"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Zhn-Xr-KF1" secondAttribute="height" id="mFK-VG-B0l"/>
+                                        </constraints>
+                                    </mtkView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Zhn-Xr-KF1" firstAttribute="leading" secondItem="2QB-Dj-Mnp" secondAttribute="leading" id="5Dm-2D-qYJ"/>
+                                    <constraint firstItem="Zhn-Xr-KF1" firstAttribute="centerY" secondItem="2QB-Dj-Mnp" secondAttribute="centerY" id="U4b-js-9Ue"/>
+                                    <constraint firstItem="Zhn-Xr-KF1" firstAttribute="centerX" secondItem="2QB-Dj-Mnp" secondAttribute="centerX" id="rXu-Se-g1r"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="YO0-jJ-F1l"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Fdq-JU-CBt" firstAttribute="leading" secondItem="Q0M-Vb-6ZM" secondAttribute="trailing" constant="2" id="7au-an-Ggy"/>
+                            <constraint firstItem="Fdq-JU-CBt" firstAttribute="height" secondItem="Q0M-Vb-6ZM" secondAttribute="height" id="ONl-QT-hIw"/>
+                            <constraint firstItem="2QB-Dj-Mnp" firstAttribute="top" secondItem="Q0M-Vb-6ZM" secondAttribute="bottom" constant="2" id="QG7-LJ-QPd"/>
+                            <constraint firstItem="YO0-jJ-F1l" firstAttribute="trailing" secondItem="2QB-Dj-Mnp" secondAttribute="trailing" constant="2" id="S3h-ag-q18"/>
+                            <constraint firstItem="Q0M-Vb-6ZM" firstAttribute="leading" secondItem="YO0-jJ-F1l" secondAttribute="leading" constant="2" id="U3l-QI-7bF"/>
+                            <constraint firstItem="Fdq-JU-CBt" firstAttribute="centerY" secondItem="Q0M-Vb-6ZM" secondAttribute="centerY" id="VGA-qU-Opv"/>
+                            <constraint firstItem="2QB-Dj-Mnp" firstAttribute="leading" secondItem="YO0-jJ-F1l" secondAttribute="leading" constant="2" id="aSC-Nx-Is2"/>
+                            <constraint firstItem="YO0-jJ-F1l" firstAttribute="bottom" secondItem="2QB-Dj-Mnp" secondAttribute="bottom" constant="2" id="hfM-7Q-Yvx"/>
+                            <constraint firstItem="YO0-jJ-F1l" firstAttribute="trailing" secondItem="Fdq-JU-CBt" secondAttribute="trailing" constant="2" id="jfG-jM-dWo"/>
+                            <constraint firstItem="Q0M-Vb-6ZM" firstAttribute="top" secondItem="YO0-jJ-F1l" secondAttribute="top" constant="2" id="tpH-wm-Tki"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tracking Face and Segmenting" id="Yca-SE-Q89"/>
+                    <connections>
+                        <outlet property="cameraMetalVideoView" destination="Q0M-Vb-6ZM" id="ZJV-fC-12m"/>
+                        <outlet property="faceCropepdMetalView" destination="Fdq-JU-CBt" id="dpZ-m5-cB4"/>
+                        <outlet property="faceParsedMetalView" destination="Zhn-Xr-KF1" id="O3m-t2-86t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fSH-FO-tsi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2586.9565217391305" y="1490.625"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="camera" catalog="system" width="128" height="94"/>
+        <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
+        <image name="memorychip" catalog="system" width="128" height="116"/>
+        <image name="photo" catalog="system" width="128" height="93"/>
+        <image name="photo.on.rectangle.fill" catalog="system" width="128" height="96"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
