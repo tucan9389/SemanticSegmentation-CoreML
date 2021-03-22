@@ -33,12 +33,20 @@ public class VideoCapture: NSObject {
         })
     }
     
-    func setUpCamera(sessionPreset: AVCaptureSession.Preset, completion: @escaping (_ success: Bool) -> Void) {
+    func setUpCamera(sessionPreset: AVCaptureSession.Preset, position: AVCaptureDevice.Position? = .back, completion: @escaping (_ success: Bool) -> Void) {
         
         captureSession.beginConfiguration()
         captureSession.sessionPreset = sessionPreset
         
-        guard let captureDevice = AVCaptureDevice.default(for: AVMediaType.video) else {
+        
+        let device: AVCaptureDevice?
+        if let position = position {
+            device = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: .video, position: position).devices.first
+        } else {
+            device = AVCaptureDevice.default(for: AVMediaType.video)
+        }
+        
+        guard let captureDevice = device else {
             print("Error: no video devices available")
             return
         }

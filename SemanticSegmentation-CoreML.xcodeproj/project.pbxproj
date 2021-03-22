@@ -30,6 +30,8 @@
 		C4BB0DA625619AA400354C08 /* MetalVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB0DA525619AA400354C08 /* MetalVideoView.swift */; };
 		C4BB0DA925619C0400354C08 /* LiveMetalCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB0DA825619C0400354C08 /* LiveMetalCameraViewController.swift */; };
 		C4BB0DB52561A47900354C08 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = C4BB0DB42561A47900354C08 /* Shaders.metal */; };
+		C4CA64502603CB36002D6C70 /* LiveFaceDetectionAndFaceParsingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CA644F2603CB36002D6C70 /* LiveFaceDetectionAndFaceParsingViewController.swift */; };
+		C4CA64542603D254002D6C70 /* CroppedTextureGenerater.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CA64532603D254002D6C70 /* CroppedTextureGenerater.swift */; };
 		C4DDEF4925FB779D000CF6A5 /* MultitargetSegmentationTextureGenerater.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DDEF4825FB779D000CF6A5 /* MultitargetSegmentationTextureGenerater.swift */; };
 		C4DDEF7525FBCBC8000CF6A5 /* FaceParsing.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C4DDEF7425FBCBC8000CF6A5 /* FaceParsing.mlmodel */; };
 /* End PBXBuildFile section */
@@ -60,6 +62,8 @@
 		C4BB0DA525619AA400354C08 /* MetalVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalVideoView.swift; sourceTree = "<group>"; };
 		C4BB0DA825619C0400354C08 /* LiveMetalCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveMetalCameraViewController.swift; sourceTree = "<group>"; };
 		C4BB0DB42561A47900354C08 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		C4CA644F2603CB36002D6C70 /* LiveFaceDetectionAndFaceParsingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveFaceDetectionAndFaceParsingViewController.swift; sourceTree = "<group>"; };
+		C4CA64532603D254002D6C70 /* CroppedTextureGenerater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CroppedTextureGenerater.swift; sourceTree = "<group>"; };
 		C4DDEF4825FB779D000CF6A5 /* MultitargetSegmentationTextureGenerater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultitargetSegmentationTextureGenerater.swift; sourceTree = "<group>"; };
 		C4DDEF7425FBCBC8000CF6A5 /* FaceParsing.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FaceParsing.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,6 +103,7 @@
 				71BBE04522E33B2500E74F11 /* LiveImageViewController.swift */,
 				C4BB0DA825619C0400354C08 /* LiveMetalCameraViewController.swift */,
 				71BBE05B22E33C6C00E74F11 /* StillImageViewController.swift */,
+				C4CA644F2603CB36002D6C70 /* LiveFaceDetectionAndFaceParsingViewController.swift */,
 				71BBE05E22E33F8D00E74F11 /* DrawingSegmentationView.swift */,
 				71BBE06622E3446300E74F11 /* SegmentationResultMLMultiArray.swift */,
 				71BBE06122E3400E00E74F11 /* Measure.swift */,
@@ -132,6 +137,7 @@
 				C4BB0D9F2561983C00354C08 /* SegmentationTextureGenerater.swift */,
 				C4DDEF4825FB779D000CF6A5 /* MultitargetSegmentationTextureGenerater.swift */,
 				C4BB0DA2256199B200354C08 /* OverlayingTexturesGenerater.swift */,
+				C4CA64532603D254002D6C70 /* CroppedTextureGenerater.swift */,
 				C4052DBF25EFE8960040F98D /* MaskTextureGenerater.swift */,
 				C4BB0D9B256196ED00354C08 /* Texture.swift */,
 				C4BB0DB32561A46B00354C08 /* Shaders */,
@@ -230,6 +236,7 @@
 				C4BB0DB52561A47900354C08 /* Shaders.metal in Sources */,
 				C4BB0DA3256199B200354C08 /* OverlayingTexturesGenerater.swift in Sources */,
 				71BBE06222E3400E00E74F11 /* VideoCapture.swift in Sources */,
+				C4CA64542603D254002D6C70 /* CroppedTextureGenerater.swift in Sources */,
 				71BBE05A22E33BF300E74F11 /* DeepLabV3Int8LUT.mlmodel in Sources */,
 				71BBE06322E3400E00E74F11 /* Measure.swift in Sources */,
 				C4BB0DA625619AA400354C08 /* MetalVideoView.swift in Sources */,
@@ -249,6 +256,7 @@
 				71BBE05F22E33F8D00E74F11 /* DrawingSegmentationView.swift in Sources */,
 				71BBE04422E33B2500E74F11 /* AppDelegate.swift in Sources */,
 				C4BB0DA02561983C00354C08 /* SegmentationTextureGenerater.swift in Sources */,
+				C4CA64502603CB36002D6C70 /* LiveFaceDetectionAndFaceParsingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
