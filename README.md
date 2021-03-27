@@ -6,7 +6,7 @@
 
 This project is Object Segmentation on iOS with Core ML.<br>If you are interested in iOS + Machine Learning, visit [here](https://github.com/motlabs/iOS-Proejcts-with-ML-Models) you can see various DEMOs.<br>
 
-| DeepLabV3-DEMO1                                              | FaseParsing-DEMO                                             | DeepLabV3-DEMO-2                              | DeepLabV3-DEMO-3                              |
+| DeepLabV3-DEMO1                                              | FaceParsing-DEMO                                             | DeepLabV3-DEMO-2                              | DeepLabV3-DEMO-3                              |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | --------------------------------------------- | --------------------------------------------- |
 | <img src="https://user-images.githubusercontent.com/37643248/99242802-167ad280-2843-11eb-959a-5fe3b169d8f0.gif" width=240px> | <img src="https://user-images.githubusercontent.com/37643248/110972921-e8943d80-839f-11eb-9559-2a32d3b56de0.gif" width=240px> | <img src="resource/IMG_3633.PNG" width=240px> | <img src="resource/IMG_3635.PNG" width=240px> |
 
